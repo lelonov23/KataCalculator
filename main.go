@@ -71,7 +71,6 @@ func main() {
 	defer out.Flush()
 
 	var inputString string
-
 	fmt.Println("input your expression:")
 	inputString, _ = in.ReadString('\n')
 	inputString = strings.TrimSpace(inputString)
@@ -102,11 +101,19 @@ func main() {
 		}
 	} else {
 		a, err = strconv.Atoi(strA)
+		if a > 10 || a < 1 {
+			fmt.Fprintln(out, "numbers should be between 1 and 10")
+			return
+		}
 		if err != nil {
 			fmt.Fprintln(out, "error: incorrect format of number", strA)
 			return
 		}
 		b, err = strconv.Atoi(strB)
+		if b > 10 || b < 1 {
+			fmt.Fprintln(out, "numbers should be between 1 and 10")
+			return
+		}
 		if err != nil {
 			fmt.Fprintln(out, "error: incorrect format of number", strB)
 			return
