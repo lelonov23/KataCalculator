@@ -50,9 +50,9 @@ A simple command-line calculator that supports both Arabic and Roman numerals fo
 $ go run main.go
 Enter expression:
 3 + 4
-Result: 7
+7
 
 $ go run main.go
 Enter expression:
 V * IV
-Result: XX
+XX
